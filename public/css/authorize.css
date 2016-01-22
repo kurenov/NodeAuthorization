@@ -1,0 +1,41 @@
+.auth-header {
+  width: 100%;
+  min-height: 100px;
+  margin: 0 auto 5px auto;
+  padding-top: 20px;
+  background-image: url('../images/logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#my-signin2 > div {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.auth-header > p {
+  margin-top: 12px;
+  margin-left: 200px;
+  font-size: 20px;
+}
+
+a, a:hover {
+  text-decoration: none !important;
+}
+
+input.ng-invalid.ng-touched {
+  background-color: #ffe5e5;
+  /*    background-color: #ffcccc;*/
+}
+
+input.ng-valid.ng-touched {
+  background-color: #e7feea;
+}
+
+.warning-text {
+  margin:0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #d34836;
+}

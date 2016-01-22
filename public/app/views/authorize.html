@@ -1,0 +1,29 @@
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+  <h3 style="text-align: center;">Sign In</h3>
+  <p style="margin-left: auto; margin-right: auto;" class="label label-info">{{signin.successMessage}}</p>
+  <p class="label label-danger">{{singinError}}</p>
+  
+  <form name="singinform" novalidate="">
+    <br/>
+    <input type="text" class="form-control" placeholder="Email" name="email"
+           ng-model="user.email"
+           ng-pattern="/^[\w\.-]+@[\w\.-]+\.[\w\.-]+$/"
+           required=""/>
+    <p class="auth_error" ng-show="singinform.email.$touched && signinform.email.$invalid ">Please enter a valid email address</p>
+    <br/>
+    <input type="password" class="form-control" placeholder="Password"
+           ng-model="user.password"
+           ng-minlength="6"
+           required=""/>
+    <br/>
+    <input type="submit" class="form-control btn-success" name="signin" value="Sign In"
+           ng-click="signIn(user)"
+           ng-disabled="singinform.$invalid">
+  </form>
+  <br/>
+  <a href="#/sign-up" style="float: left; color: maroon; font-size: 14px;">&larr; Create New Account</a>
+  <a href="#/reset-password" style="float: right">Reset Password &rarr;</a>
+  <br/>
+</div>
+<div class="col-sm-4"></div>

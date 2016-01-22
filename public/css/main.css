@@ -1,0 +1,15 @@
+.warning-text {
+  margin:0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #d34836;
+}
+
+.group-select {
+  min-width: 100px;
+  height: 34px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #95d6ea;
+  border-color: #46b8da;
+}

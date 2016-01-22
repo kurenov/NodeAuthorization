@@ -1,0 +1,22 @@
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+  <h3 style="text-align: center;">Reset Password</h3>
+  <h5 style="text-align: center;">Please enter email linked to your account</h5>
+  <span class="label label-info">{{reset.successMessage}}</span>
+  <span class="label label-danger">{{reset.errorMessage}}</span>
+  <form name="singinform" novalidate="">
+    <br/>
+    <input type="text" class="form-control" placeholder="Email"
+           ng-model="resetEmail"
+           ng-pattern="/^[\w\.-]+@[\w\.-]+\.[\w\.-]+$/"
+           required=""/>
+    <br/>
+    <input type="submit" class="form-control btn-success" name="reset" value="Reset Password"
+           ng-click="resetPassword(resetEmail)"
+           ng-disabled="singinform.$invalid">
+  </form>
+  <br/>
+  <a href="#/" style="float: left">&larr; Back to Login page</a>
+  <br/>
+</div>
+<div class="col-sm-4"></div>

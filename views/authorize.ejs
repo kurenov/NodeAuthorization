@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Sign In | Kurenov.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/css/authorize.css" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css" />
+
+    <script type="text/javascript" src="/js/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angular-route.min.js"></script>    
+    <script type="text/javascript" src="/app/authorizeApp.js"></script>
+
+    <script type="text/javascript" src="/app/controllers/authorizeController.js"></script>
+    <script type="text/javascript" src="/app/services/authorizeFactory.js"></script>
+  </head>
+  <body ng-app="authorizeApp">
+    <input type="hidden" value="<%= auth_token %>" id="auth_token">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="text-align: center">
+          <a href="/">
+            <div class="auth-header">
+              <!--<p>Welcome to Gears.kz</p>-->
+            </div>
+          </a>
+          <a href="/auth/google" class="btn btn-danger" >Sign In using Google <i class="fa fa-google-plus"></i></span></a>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+
+      <div class="row" ng-view="">
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <br/>
+          <% var d = new Date();%>
+          <h6 style="text-align: center;">Copyright © <%= d.getFullYear(); %> Kurenov.com All Rights Reserved.</h6>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </div>
+  </body>
+</html>

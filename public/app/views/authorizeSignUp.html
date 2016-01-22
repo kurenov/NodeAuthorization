@@ -1,0 +1,39 @@
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+  <h3 style="text-align: center;">Sign Up</h3>
+  <p style="margin-left: auto; margin-right: auto;" class="label label-info">{{signin.successMessage}}</p>
+  <p class="label label-danger">{{singupError}}</p>
+  
+  <form name="singupform" novalidate="">
+    <br/>
+    <!--<span class="label label-warning" style="display: block; margin-bottom: 5px; padding: 5px; font-size: 14px;">Warning</span>-->
+    <p class="warning-text"
+       ng-show="singupform.email.$invalid && singupform.email.$touched">Enter a valid Email address</p>
+    <input type="text" class="form-control" placeholder="Email" name="email"
+           ng-model="newuser.email"
+           ng-pattern="/^[\w\.-]+@[\w\.-]+\.[\w\.-]+$/"
+           required=""/>
+    <br/>
+    <span class="warning-text"
+       ng-show="singupform.password1.$invalid && singupform.password1.$touched">Password has to be at least 6 characters long</span>
+    <input type="password" class="form-control" placeholder="Create Password" name="password1"
+           ng-model="newuser.password1"
+           ng-minlength="6"
+           required=""/>
+    <br/>
+    <p class="warning-text"
+       ng-show="singupform.password2.$invalid && singupform.password2.$touched">Passwords have to match</p>
+    <input type="password" class="form-control" placeholder="Repeat Password" name="password2"
+           ng-model="newuser.password2"
+           ng-pattern="newuser.password1"
+           ng-minlength="6"
+           required=""/>
+    <br/>
+    <input type="submit" class="form-control btn-info" name="signin" value="Sign In"
+           ng-click="signUp(newuser)"
+           ng-disabled="singupform.$invalid">
+  </form>
+  <br/>
+  <a href="#/" style="float: right; font-size: 14px;">Sign In &rarr;</a>
+</div>
+<div class="col-sm-4"></div>
