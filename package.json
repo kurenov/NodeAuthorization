@@ -1,0 +1,20 @@
+{
+  "name" : "MEANAuthorization",
+  "version" : "0.0.1",
+  "main" : "./",
+  "author" : {
+    "name" : "Olzhas Kurenov",
+    "email" : "olzhas@kurenov.com"
+  },
+  "keywords" : [ ],
+  "licenses" : {
+    "type" : "none"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/YOUR_LOGIN/Hello World.git"
+  },
+  "bugs" : {
+    "url" : "null"
+  }
+}
