@@ -9,14 +9,6 @@ mainApp.config(function ($routeProvider) {
           .when('/signup-success', {
             templateUrl: '/app/views/signUpSuccess.html'
           })
-          .when('/companies', {
-            controller: 'companiesController',
-            templateUrl: '/app/views/companies.html'
-          })
-          .when('/my-companies', {
-            controller: 'companyController',
-            templateUrl: '/app/views/myCompany.html'
-          })
           .when('/under-construction', {
             controller: '',
             templateUrl: '/app/views/authorizeRP.html'
@@ -32,7 +24,6 @@ mainApp.factory('httpRequestInterceptor', function ($window) {
       var token = $window.localStorage.auth_token;
       if (token) {
         config.headers['x-access-token'] = token;
-//        console.log(token);
       }
       return config;
     }
@@ -80,23 +71,16 @@ var headerController = function($scope, $window, $location, logFactory) {
   
 };
 
-//headerController.$inject = ['$scope', '$window', '$location', 'logFactory'];
+headerController.$inject = ['$scope', '$window', '$location', 'logFactory'];
 mainApp.controller('headerController', headerController);
 
 var authorizeController = function($scope, $window) {
-  
-  
-  $scope.getAdmin = function() {
-    
-  }
-  
   if (typeof $window.localStorage.auth_token == 'undefined' || $window.localStorage.auth_token == '') {
     $window.location.href = '/authorize';
   }
   else {
     $scope.getAdmin();
   }
-  
   
   $scope.logout = function () {
     $window.localStorage.removeItem('auth_token');
@@ -105,5 +89,4 @@ var authorizeController = function($scope, $window) {
   
 };
 authorizeController.$inject = ['$scope', '$window'];
-
 mainApp.controller('authorizeController', authorizeController);
